@@ -43,9 +43,9 @@ How to Win:
 
 ## Teacher Response ##
 
-Approved | Not approved
+**Approved**
 
-Comments and suggestions
+Looks like a good plan.
 
 ## Class Design and Brainstorm ##
 
