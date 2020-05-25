@@ -51,13 +51,18 @@ Looks like a good plan.
 
 Put all your brainstorm ideas, strategy approaches, and class outlines here
 
++ Each level is going to be its own subclass of World, so essentially, when the levels have to be switched, a new object of the next level subclass must be added into its place.
++ There is going to be a level abstract class that is going have all the elements common between all levels such as the score display, key-press handler etc.
++ Each moving element of the game is going to be an Actor subclass with the act() method overridden.
++ A seperate class will be created, which stores all the data required across the game as private static variables, which can be accessed using the given static setter and getter methods.
+
 ## Development Journal ##
 
 Every day you work, keep track of it here.
 
-**Date (time spent)**
+**May 25, 2020 (time spent)**
 
-Goal:  What are you trying to accomplish today?
+Goal:  Complete a proof of concept version of the game
 
 Work accomplished:  Describe what you did today and how it went.
 
