@@ -12,6 +12,8 @@ public class Level1 extends Level {
 	void addUniqueElements() {
 		//add walls here
 		//walls are actors, so make an image for the wall
+		add(new Obstacle(-100, 100, 700, 150));
+		add(new Obstacle(300, 400, 700, 150));
 		
 		
 	}

@@ -4,6 +4,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.CornerRadii;
@@ -26,23 +27,29 @@ public abstract class Level extends World {
 		scoreTxt = new Score(Data.getTotalScore());
 		gameInfo.getChildren().add(scoreTxt);
 		Button exitLevel = new Button("Exit Level");
-		exitLevel.setOnAction(new EventHandler<ActionEvent>() {
+		exitLevel.setOnMouseClicked(new EventHandler<MouseEvent>() {
+			
 			@Override
-			public void handle(ActionEvent arg0) {
+			public void handle(MouseEvent event) {
 				border.setBottom(null);
 				border.setCenter(new TitleScreen(border));
+				
 			}
 		});
-		
+		setStyle("-fx-background-color: #444454;");
 		gameInfo.getChildren().add(exitLevel);
 		gameInfo.setSpacing(340);
 		border.setBottom(gameInfo);
-		gameInfo.setStyle("-fx-background-color: #cdd1ce;");
-		gameInfo.setPadding(new Insets(40, 100, 40, 100));
+		gameInfo.setStyle("-fx-background-image: url('resources/moon_rock_beta.png');" +
+		        "-fx-background-repeat: stretch;" +
+		        "-fx-background-size: 810 150;" +
+		        "-fx-background-position: center center;");
+		//gameInfo.setStyle("-fx-background-color: #cdd1ce;");
+		gameInfo.setPadding(new Insets(20, 100, 40, 100));
 		
 		//adding the player
 		add(getShip());
-		
+		add(new Obstacle(-10, 660, 820, 151));
 		//Input listeners
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
