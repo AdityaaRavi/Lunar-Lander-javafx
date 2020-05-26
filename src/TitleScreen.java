@@ -21,8 +21,8 @@ public class TitleScreen extends World {
 		
 		HBox hbox = new HBox(level1, level2, quit); 
 		hbox.setSpacing(70);
-		BorderPane.setMargin(hbox, new Insets(60, 100, 60, 120));
-		BorderPane.setMargin(text, new Insets(380, 100, 80, 120));
+		BorderPane.setMargin(hbox, new Insets(60, 200, 60, 220));
+		BorderPane.setMargin(text, new Insets(380, 100, 80, 220));
 		border.setTop(text);
 
 		
@@ -33,6 +33,7 @@ public class TitleScreen extends World {
             public void handle(ActionEvent event) {
             	border.setTop(null);
             	border.setBottom(null);
+            	Data.resetScore();
                 border.setCenter(new Level1(border));
             }
         });
@@ -42,6 +43,7 @@ public class TitleScreen extends World {
             public void handle(ActionEvent event) {
             	border.setTop(null);
             	border.setBottom(null);
+            	Data.resetScore();
                 border.setCenter(new Level2(border));
             }
         });

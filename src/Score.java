@@ -17,7 +17,7 @@ public class Score extends Text {
 	}
 	
 	public void updateDisplay() {
-		setText("Health:\t" + score);
+		setText("Press 'up' to start!\nHealth:\t" + score);
 	}
 	
 	public int getHealth() {

@@ -10,8 +10,15 @@ public class Level1 extends Level {
 
 	@Override
 	void addUniqueElements() {
-		// TODO Auto-generated method stub
+		//add walls here
+		//walls are actors, so make an image for the wall
+		
+		
+	}
 
+	@Override
+	Spaceship getShip() {
+		return new Lander(getWidth()/2, getHeight());
 	}
 	
 

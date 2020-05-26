@@ -22,7 +22,7 @@ public class Game extends Application{
 		
 		TitleScreen title = new TitleScreen(border);
 		
-		Scene scene = new Scene(border, 600, 800);
+		Scene scene = new Scene(border, 800, 800);
 		primaryStage.setScene(scene);
 		primaryStage.show();
 		

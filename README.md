@@ -55,6 +55,7 @@ Put all your brainstorm ideas, strategy approaches, and class outlines here
 + There is going to be a level abstract class that is going have all the elements common between all levels such as the score display, key-press handler etc.
 + Each moving element of the game is going to be an Actor subclass with the act() method overridden.
 + A seperate class will be created, which stores all the data required across the game as private static variables, which can be accessed using the given static setter and getter methods.
++ There will be a Spaceship abstract class that has all the properties and actions common between the spaceships that will be used throughout the game, and each Spacecraft subclass will have their own getters and setters for the properties that change.
 
 ## Development Journal ##
 

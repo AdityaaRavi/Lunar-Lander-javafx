@@ -9,8 +9,14 @@ public class Level2 extends Level {
 
 	@Override
 	void addUniqueElements() {
-		// TODO Auto-generated method stub
+		
 
+	}
+
+	@Override
+	Spaceship getShip() {
+		// TODO Auto-generated method stub
+		return new MotherShip(getWidth()/2, getHeight());
 	}
 
 }

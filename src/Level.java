@@ -35,10 +35,13 @@ public abstract class Level extends World {
 		});
 		
 		gameInfo.getChildren().add(exitLevel);
-		gameInfo.setSpacing(200);
+		gameInfo.setSpacing(340);
 		border.setBottom(gameInfo);
 		gameInfo.setStyle("-fx-background-color: #cdd1ce;");
 		gameInfo.setPadding(new Insets(40, 100, 40, 100));
+		
+		//adding the player
+		add(getShip());
 		
 		//Input listeners
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -60,6 +63,7 @@ public abstract class Level extends World {
 
 	}
 
+	abstract Spaceship getShip();
 	abstract void addUniqueElements();
 
 	@Override

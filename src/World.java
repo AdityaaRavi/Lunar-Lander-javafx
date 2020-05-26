@@ -73,4 +73,7 @@ public abstract class World extends Pane {
 	public boolean isKeyDown(KeyCode e) {
 		return keysDown.contains(e);
 	}
+	public int numKeysPressed() {
+		return keysDown.size();
+	}
 }

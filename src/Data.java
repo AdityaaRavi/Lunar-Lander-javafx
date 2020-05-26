@@ -1,6 +1,6 @@
 
 public class Data {
-	private static int totalHealth = 2000;
+	private static int totalHealth = 2020;
 	
 	
 	public static int getTotalScore() {
@@ -10,6 +10,6 @@ public class Data {
 		if(addMe < 0) totalHealth += addMe;
 	}
 	public static void resetScore() {
-		totalHealth = 2000;
+		totalHealth = 2020;
 	}
 }
