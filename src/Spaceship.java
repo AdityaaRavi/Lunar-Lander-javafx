@@ -39,6 +39,19 @@ public abstract class Spaceship extends Actor {
 		//System.out.println("X: " + getX() + ", Y: " + getY());
 		//System.out.println("World Height: "  + getWorld().getHeight() + ", width: " + getWorld().getWidth());
 		
+		
+		//bonus health points check
+		if(getOneIntersectingObject(Obstacle.class) != null && getOneIntersectingObject(HealthPack.class) != null) {
+			healthChange += 1000;
+			getWorld().remove(getOneIntersectingObject(HealthPack.class));
+		}
+		
+		//Add win detection
+		if(getOneIntersectingObject(Obstacle.class) != null && getOneIntersectingObject(Target.class) != null) {
+			healthChange += 1000;
+			((Level)getWorld()).wonGame();
+		}
+		
 		//Add collision detection and downward movement prevention.
 		if(getOneIntersectingObject(Obstacle.class) != null) {
 			healthChange -= 10;
@@ -48,7 +61,6 @@ public abstract class Spaceship extends Actor {
 			if(getWorld().isKeyDown(KeyCode.D)) setX(getX() - getDxRight());
 		}
 		
-		//Add win detection
 		
 		
 		//don't remove, this updates the score every frame.

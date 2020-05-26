@@ -47,9 +47,10 @@ public abstract class Level extends World {
 		//gameInfo.setStyle("-fx-background-color: #cdd1ce;");
 		gameInfo.setPadding(new Insets(20, 100, 40, 100));
 		
-		//adding the player
+		//adding game elements
+		addUniqueElements();
 		add(getShip());
-		add(new Obstacle(-10, 660, 820, 151));
+		add(new Obstacle(-10, 660, 850, 151));
 		//Input listeners
 		setOnKeyPressed(new EventHandler<KeyEvent>() {
 			@Override
@@ -65,7 +66,7 @@ public abstract class Level extends World {
 			}
 		});
 
-		addUniqueElements();
+		//addUniqueElements();
 		requestFocus();
 
 	}
@@ -78,13 +79,17 @@ public abstract class Level extends World {
 		
 		scoreTxt.setX(20);
 		scoreTxt.setY(getHeight() - getHeight()/20);
-		
+		if(scoreTxt.getHealth() < 0) lostGame();
 		
 
 	}
+
+	public abstract void lostGame();
 
 	public Score getScore() {
 		return scoreTxt;
 	}
+
+	public abstract void wonGame();
 
 }
