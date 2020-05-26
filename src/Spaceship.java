@@ -48,6 +48,9 @@ public abstract class Spaceship extends Actor {
 			if(getWorld().isKeyDown(KeyCode.D)) setX(getX() - getDxRight());
 		}
 		
+		//Add win detection
+		
+		
 		//don't remove, this updates the score every frame.
 		Score txt = ((Level)getWorld()).getScore();
 		txt.setHealth(txt.getHealth() + healthChange);
