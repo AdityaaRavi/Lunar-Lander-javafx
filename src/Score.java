@@ -24,7 +24,7 @@ public class Score extends Text {
 		return score;
 	}
 	public void setHealth(int score) {
-		Data.addToScore(score - this.score);
+		Data.setHealth(score);
 		this.score = score;
 		updateDisplay();
 	}

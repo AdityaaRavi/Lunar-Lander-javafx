@@ -17,13 +17,13 @@ public class MidgameScoreScreen extends GameScoreScreen{
 
 	@Override
 	public String getLevel1ButtonText(boolean won) {
-		return "Restart Level " + level;
+		return "Restart Level 1";
 	}
 
 	@Override
 	public String getLevel2ButtonText(boolean won) {
-		if(won) return "Continue to Level " + (level + 1);
-		return "Skip to Level " + (level + 1);
+		if(won) return "Continue to Level 2";
+		return "Skip to Level 2";
 	}
 		
 }

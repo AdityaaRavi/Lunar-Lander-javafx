@@ -20,7 +20,9 @@ public class Game extends Application{
 		primaryStage.setTitle("LUNAR PILOT! v1.0");
 		primaryStage.setResizable(false);
 		
+		(new Data()).giveSound(Data.BUTTON_CLICK).play();
 		TitleScreen title = new TitleScreen(border);
+
 		
 		Scene scene = new Scene(border, 800, 800);
 		primaryStage.setScene(scene);

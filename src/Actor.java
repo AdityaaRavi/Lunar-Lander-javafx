@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import javafx.scene.Node;
 
 public abstract class Actor extends javafx.scene.image.ImageView {
-	
+	private boolean toBeRemoved = false;
 	public abstract void act(long now);
 	
 	public void move(double dx, double dy) {
@@ -42,5 +42,12 @@ public abstract class Actor extends javafx.scene.image.ImageView {
 			}
 		}
 		return null;
+	}
+	
+	public boolean needRemoving() {
+		return toBeRemoved;
+	}
+	public void setNeedToRemove(boolean remove) {
+		toBeRemoved = remove;
 	}
 }

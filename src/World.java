@@ -19,8 +19,8 @@ public abstract class World extends Pane {
 				for (Node n : getChildren()) {
 					if (n instanceof Actor) {
 						Actor p = (Actor) (n);
-						//set position of things here if they don't cooperate.
-						p.act(now);
+						if(p.needRemoving()) remove(p);
+						else p.act(now);
 
 					}
 				}
@@ -43,6 +43,7 @@ public abstract class World extends Pane {
 	}
 
 	public void remove(Actor actor) {
+		///actor.setNeedToRemove(true);
 		getChildren().remove(actor);
 
 	}

@@ -31,6 +31,7 @@ public abstract class Level extends World {
 			
 			@Override
 			public void handle(MouseEvent event) {
+				(new Data()).giveSound(Data.BUTTON_CLICK).play();
 				border.setBottom(null);
 				border.setCenter(new TitleScreen(border));
 				

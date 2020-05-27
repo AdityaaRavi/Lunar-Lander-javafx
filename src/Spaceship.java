@@ -1,4 +1,5 @@
 import javafx.scene.input.KeyCode;
+import javafx.scene.media.AudioClip;
 
 public abstract class Spaceship extends Actor {
 
@@ -7,9 +8,16 @@ public abstract class Spaceship extends Actor {
 	
 	@Override
 	public void act(long now) {
-		if(getWorld().isKeyDown(KeyCode.A) && !onGround && getOneIntersectingObject(Obstacle.class) == null) move(getDxLeft(), 0);
-		if(getWorld().isKeyDown(KeyCode.D) && !onGround && getOneIntersectingObject(Obstacle.class) == null) move(getDxRight(), 0);
+		if(getWorld().isKeyDown(KeyCode.A) && !onGround && getOneIntersectingObject(Obstacle.class) == null) {
+			getLeftSound().play();
+			move(getDxLeft(), 0);
+		}
+		if(getWorld().isKeyDown(KeyCode.D) && !onGround && getOneIntersectingObject(Obstacle.class) == null) {
+			getRightSound().play();
+			move(getDxRight(), 0);
+		}
 		if(getWorld().isKeyDown(KeyCode.W) && getOneIntersectingObject(Obstacle.class) == null) {
+			getUpSound().play();
 			prevYMovement = getDY();
 			move(0, getDY());
 			onGround = false;
@@ -42,7 +50,7 @@ public abstract class Spaceship extends Actor {
 		
 		//bonus health points check
 		if(getOneIntersectingObject(Obstacle.class) != null && getOneIntersectingObject(HealthPack.class) != null) {
-			healthChange += 1000;
+			healthChange += 500;
 			getWorld().remove(getOneIntersectingObject(HealthPack.class));
 		}
 		
@@ -64,6 +72,8 @@ public abstract class Spaceship extends Actor {
 		
 		
 		//don't remove, this updates the score every frame.
+		if(healthChange < 0) (new Data()).giveSound(Data.OBSTACLE).play();
+		else if(healthChange > 0) (new Data()).giveSound(Data.POWER_UP).play();
 		Score txt = ((Level)getWorld()).getScore();
 		txt.setHealth(txt.getHealth() + healthChange);
 
@@ -73,5 +83,9 @@ public abstract class Spaceship extends Actor {
 	public abstract int getDxLeft();
 	public abstract int getDY();
 	public abstract int getGdy();
+	
+	public abstract AudioClip getRightSound();
+	public abstract AudioClip getLeftSound();
+	public abstract AudioClip getUpSound();
 
 }

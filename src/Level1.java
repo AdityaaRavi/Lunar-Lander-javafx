@@ -27,7 +27,9 @@ public class Level1 extends Level {
 
 	@Override
 	public void lostGame() {
+		(new Data()).giveSound(Data.GAME_OVER).play();
 		stop();
+		Data.setHealth(0);
 		border.setBottom(null);
 		border.setCenter(new MidgameScoreScreen(border, "YOU LOST :-(", false, 1));
 		
@@ -35,9 +37,12 @@ public class Level1 extends Level {
 
 	@Override
 	public void wonGame() {
+		(new Data()).giveSound(Data.GAME_WON).play();
 		stop();
 		border.setBottom(null);
-		border.setCenter(new MidgameScoreScreen(border, "YOU WON!", true, 1));
+		if(getScore().getHealth() > 0)
+			border.setCenter(new MidgameScoreScreen(border, "YOU WON!", true, 1));
+		else lostGame();
 		
 	}
 	
