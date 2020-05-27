@@ -73,11 +73,11 @@ Goal:  Complete a proof of concept version of the game
 
 Work accomplished: I finished everything I planned for today. It took me some time to figure out why each of the actors were in places that the coordinates I gave didn't match with. I finally figured out that it was because of the fact that the coordinate system used by each world in the center of the BorderPane I used doesn't match with that of the whole screen. I have decided to not make the craft acclerate due to gravity, but rather fall at a constant pace, so the player doesn't have to worry about falling too fast, but they will lose a small portion of health points each frame they are in contact with an obstacle. I also completely finished designing Level 1 and I have also made the pictures to represent the ground and the obstacles.
 
-**Date (time spent)**
+**May 26, 2020 (8 hours)**
 
-Goal:  What are you trying to accomplish today?
+Goal:  Complete the whole game - including sounds, pictures and instructions. 
 
-Work accomplished:  Describe what you did today and how it went.
+Work accomplished:  I finished everything I planned for today. Although I had all the game parts such as the levels fully done by this afternoon, it took me quite a bit of time to polish the game and make it more presentable. I didn't have to change much from my initial plan today, so the changes described on yesterday's log in the journal are the only deviations from my original plan. After I figured out that the coordinate system of the objects in each world don't necessarily  align with the coordinate system of the entire screen, it didn't take me much time to figure out the positions that I have to put my obstacles to put them where I want. As far as organizing my code goes, I tried my best to put all repeating parts of my code in abstract classes and just change the properties that differ between the different types of objects. But I think I should have spent some time organizing my classes into packages, as right now, even though it works  does make it annoying to search for the class that I want to edit, so that is something that I will do for my future projects. Overall, I enjoyed working on this project and never once got bored even though I ended up putting many consecutive hours the past two days so that I can finish my game comfortably before the expedited deadline for seniors. 
 
 ***
 ***
