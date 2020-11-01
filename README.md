@@ -22,4 +22,3 @@ How to Win:
 + Don't touch any walls or go out of bounds.
 
 ***
-***
