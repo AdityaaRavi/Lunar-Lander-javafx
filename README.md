@@ -11,9 +11,10 @@ Game Elements:
 + Static levels each with a simple vertical maze that the player has to navigate.
 + Two different levels.
 + Different vehicles available for use in different levels.
-+ A maximum speed at which the space craft can land on the ground without destroying it.
-+ The player will immediately loose the game if they touch any surface that isn't ground.
-+ The player will also immediately loose if they go out of bounds of the screen.
++ The player will lose health points if they touch any surface that isn't a powerup or a landing pad.
++ The player will lose health points if they go out of bounds of the screen.
++ The player will lose the game if their health points reach 0.
++ A powerup exists in the second level that increments the player's health points if they come into contact with it.
 
 How to Win:
 
