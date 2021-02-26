@@ -1,11 +1,14 @@
-# README #
+# README - Lunar-Lander-javafx #
 
-Game Controls:
+A simple spacecraft landing game created with javaFX using a custom-built game engine to allow making games using JavaFX.
+
+***
+## Game Controls:
 
 + Keyboard controls to make each vehicle move up, to the left and right.
 + The user will have to use the gravity to bring the vehicle down, using proper timing to bring it down at the right time and speed.
 
-Game Elements:
+## Game Elements:
 
 + Simple gravity physics that accelerate different objects at different rates based on their weight.
 + Static levels each with a simple vertical maze that the player has to navigate.
@@ -16,10 +19,9 @@ Game Elements:
 + The player will lose the game if their health points reach 0.
 + A powerup exists in the second level that increments the player's health points if they come into contact with it.
 
-How to Win:
+## How to Win:
 
 + Use the keyboard to control upward and left/right thrusters to move the craft.
 + Use gravity to bring the spacecraft down, but use the thrusters to ensure that you don't fall too fast.
 + Don't touch any walls or go out of bounds.
 
-***
